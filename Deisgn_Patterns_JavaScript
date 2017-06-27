@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------------------------------------------------------------------
+Modular Design pattern
+used Immedite Executing Function Expression
+
+var Obj=(function(){
+	this.x;
+	return {
+		getX:function(){ return this.x;},
+		setX:function(newVal){this.x=newVal;}
+	};
+})();
+---------------------------------------------------------------------------------------------------------------------------------------------------
+Singleton Design Pattern
+
+var Obj=(function(){
+	var singletonObj;
+	function SingletonClass(){
+		this.x;
+		this.y;
+		return {
+			getX:function(){return this.x;},
+			getY:function(){return this.y;},
+			setX:function(newVal){this.x=newVal;},
+			setY:function(newVal){this.y=newVal;}
+		};
+	}
+	return {
+		getInstance:function(){
+			if(singletonObj ==undefined){
+				singletonObj=SingletonClass();
+			}
+			return singletonObj;
+		}
+		};
+})()
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Observer Design Pattern
+
+var Subject=function(){
+	this.observers=[];
+	return {
+		addObserver:function(observer){console.log(this);this.observers.push(observer);},
+		removeObserver:function(observer){let index=this.observers.indexOf(observer);this.observers.splice(index,1);},
+		notifyObserver:function(observer){let index=this.observers.indexOf(observer);this.observers[index].notify(index);},
+		notifyAllObserver:function(observer){for(var i=1;i<=observers.length;i++)this.observers[i].notify(i);}
+	};
+}
+
+	var Observer=function(){
+		return {
+			notify:function(i){
+				console.log("Observer "+i+" Has been Notified");
+			}
+		}
+	}
