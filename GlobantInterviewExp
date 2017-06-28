@@ -1,0 +1,17 @@
+JavaScript : Interview Experience in Globant
+1) Object Oriented JavaScript ,
+	a) Write Class in es5 ,
+	b) extend class in es5,
+	c) prototype in es5,
+2) Difference between bind and apply
+3) Event Propagation and Event Bubbling in JavaScript, 
+   a) Difference between stopPropagation and preventDefault
+4) HTML 5 
+   a) Session Storage
+   b) Local Storage
+5) meta tags in html and its uses
+6) CSS3 
+   a) Animation
+   b) Canvas
+7) Promise in new es6 and its Working
+8) typeOf(object)
