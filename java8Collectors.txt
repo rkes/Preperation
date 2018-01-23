@@ -1,0 +1,19 @@
+Collect is terminal method of Stream Object that does some mutable fold operation based on some strategy , that strategy we pass as argument.
+we have some predefined strategy like Collectors.toList,Collectors.toSet,Collectors.toMap ,
+Collectors.toList and Collectors.toSet is Straight forward ,
+
+Collectors.toMap():- we need to pass 2 arugment keyMapper and valueMapper , 
+e.g. :- we need to store String w.r.t its length so key is String and Value is length
+i.e HashMap<String,Integer> map;
+List<String> lst =new ArrayList(Arrays.asList(new String[]("Abc","Defghi","A","BN")));
+now lst will have the list of Strings
+so 
+
+map =  lst.stream().Collect(Collectors.toMap(Function::identity,String::length));
+
+Function::identity :- it will return the value in list . here in our case it will be String.
+Map have 3rd Arument as BinaryOperator i.e. when collision happens .
+
+Collectors.collectingAndThen() :- If we want any thing after COllection of list ends we can go for collectingAndThen .
+E.g. > we need the collection created and then we need to create immutable copy of it then we can use like 
+	:- lst.stream.Collect(CollectingAndThen(toList(),Immutable ::copyOf))
